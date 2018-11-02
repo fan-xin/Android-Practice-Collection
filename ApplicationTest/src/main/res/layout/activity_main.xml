@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-<Button
-    android:id="@+id/id_button"
-    android:text="点击按钮启动界面"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/id_button"
+        android:text="点击按钮启动界面"
+        android:onClick="clickbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-<Button
-    android:id="@+id/id_button_start_service"
-    android:text="点击按钮启动服务"
-    android:layout_below="@id/id_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/id_button_start_service"
+        android:text="点击按钮启动服务"
+        android:onClick="clickbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/id_button_set_username"
+        android:text="点击按钮设置用户名"
+        android:onClick="clickbtn"
+        android:layout_below="@id/id_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/id_button_get_username"
+        android:text="点击按钮获取用户名"
+        android:onClick="clickbtn"
+        android:layout_below="@id/id_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
