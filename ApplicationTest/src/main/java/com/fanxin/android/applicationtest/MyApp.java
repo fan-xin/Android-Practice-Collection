@@ -13,7 +13,7 @@ public class MyApp extends Application {
     private static final String TAG = "MyApp-app";
     private String username;
 
-    
+
 
     public static String getTAG() {
         return TAG;
