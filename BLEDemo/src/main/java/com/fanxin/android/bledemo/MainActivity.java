@@ -10,9 +10,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity-app";
     //蓝牙适配器
     private BluetoothAdapter bluetoothAdapter;
     private Toast toast;
@@ -25,24 +27,32 @@ public class MainActivity extends AppCompatActivity {
 
         requestPermissions();
 
-        toast = Toast.makeText(this, "",Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this, "hello",Toast.LENGTH_SHORT).show();
+
+        toast = Toast.makeText(MainActivity.this, " ",Toast.LENGTH_SHORT);
 
         final BluetoothManager bluetoothManager =
                 (BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
         bluetoothAdapter = bluetoothManager.getAdapter();
 
+        Log.d(TAG,"开始检查手机");
+
         if (bluetoothAdapter != null){
             showToast("手机支持蓝牙！");
+            Log.d(TAG,"手机支持蓝牙");
         }else {
             finish();
         }
+
 
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)){
             showToast("手机不支持蓝牙BLE功能");
             finish();
         }else {
             showToast("手机支持蓝牙BLE功能");
+            Log.d(TAG,"手机支持蓝牙BLE功能");
         }
+        Log.d(TAG,"检查手机结束");
 
     }
 
