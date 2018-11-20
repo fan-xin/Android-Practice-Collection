@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ViewAnimationActivity">
+    <LinearLayout
+        android:background="@drawable/edge"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <View
+            android:background="@color/colorPrimary"
+            android:layout_margin="8dp"
+            android:id="@+id/id_view_Accelerate"
+            android:layout_width="50dp"
+            android:onClick="onClick"
+            android:layout_height="50dp"/>
+
+        <View
+            android:background="@color/colorPrimary"
+            android:alpha="0.5"
+            android:layout_margin="8dp"
+            android:id="@+id/id_view_Linear"
+            android:layout_width="50dp"
+            android:onClick="onClick"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:id="@+id/id_textview_alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:onClick="onClick"
+            android:padding="16dp"
+            android:text="Hello"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/id_textview_scale"
+            android:text="Hello World"
+            android:onClick="onClick"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/id_textview_translate"
+            android:text="Hello World"
+            android:onClick="onClick"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/id_textview_rotate"
+            android:text="Hello World"
+            android:onClick="onClick"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:layout_gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/id_textview_set"
+            android:text="Hello World"
+            android:onClick="onClick"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <!--为上面的控件腾出空间 -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
