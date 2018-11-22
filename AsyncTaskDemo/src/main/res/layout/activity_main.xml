@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:text="AsyncTask　Demo练习" />
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/id_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:progress="100"
+        />
+
+    <Button
+        android:id="@+id/id_btn_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击下载"
+        />
+
+    <TextView
+        android:id="@+id/id_tv_download_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载状态"
+        />
+
+
+
+</LinearLayout>
