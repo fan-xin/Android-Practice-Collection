@@ -11,4 +11,7 @@ android学习过程中的demo程序
 
 ## ListViewRefreshDemo 下拉可以刷新数据的ListView
 
+## ANRDemo 再现ANR线程
+让UI线程占用资源，使得系统无法及时响应，出现ANR(Application Not Resposible)现象
+
 
