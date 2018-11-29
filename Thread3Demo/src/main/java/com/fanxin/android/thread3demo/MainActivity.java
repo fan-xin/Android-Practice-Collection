@@ -30,21 +30,40 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.id_btn);
         textView = findViewById(R.id.id_text_view);
 
+        mainHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+
+                String fromChildString = (String)msg.obj;
+
+                Log.d(TAG,"收到的内容"+fromChildString);
+                textView.setText(fromChildString);
+            }
+        };
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this,"click",Toast.LENGTH_SHORT).show();
                 //按下按钮以后，主线程给子线程发消息
-                Message msg = new Message();
-                //msg可以携带参数
-                msg.what = 9;
-                //发送给子线程
-                childHandler.sendMessage(msg);
+                if (childHandler != null){
+                    Message msg = new Message();
+                    //msg可以携带参数
+                    msg.what = 9;
+                    msg.obj = "Hello";
+                    //发送给子线程
+                    childHandler.sendMessage(msg);
+
+                }
+
 
             }
         });
         //运行子线程；
         new ChildThread().start();
+
+
     }
 
     //自己写子线程
@@ -61,7 +80,20 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
-                    Log.d(TAG,"接收到子线程发过来的 what"+msg.what);
+                    Log.d(TAG,"接收到子线程发过来的 what: "+msg.what);
+
+                    String fromMainString = (String)msg.obj;
+                    Log.d(TAG,"接收到主线程发来的信息obj: "+msg.obj);
+                    String toMainString = fromMainString + ", World!";
+
+                    //发给主线程的Message
+                    Message message = new Message();
+                    message.obj = toMainString;
+                    if (mainHandler != null){
+                        mainHandler.sendMessage(message);
+                    }
+
+
                 }
             };
 
