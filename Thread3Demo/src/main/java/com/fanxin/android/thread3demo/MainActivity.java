@@ -54,10 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     msg.obj = "Hello";
                     //发送给子线程
                     childHandler.sendMessage(msg);
-
                 }
-
-
             }
         });
         //运行子线程；
@@ -92,11 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     if (mainHandler != null){
                         mainHandler.sendMessage(message);
                     }
-
-
                 }
             };
-
 
             //开启消息队列
             Looper.loop();
