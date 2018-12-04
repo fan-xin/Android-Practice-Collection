@@ -22,7 +22,7 @@ public class TcpServer {
                 //等待TCP连接的到来
                 //socket表示连接上的客户端
                 Socket socket = serverSocket.accept();
-                System.out.println("ip: "+socket.getInetAddress().getHostAddress()+
+                System.out.println("客户端 IP: "+socket.getInetAddress().getHostAddress()+
                         ", port = "+socket.getPort()+" is online.");
 
                 //等待请求的到来，每次接收到一个请求，就新建一个线程
@@ -31,15 +31,11 @@ public class TcpServer {
                 MsgPool.getsInstance().addMsgComingListener(clientTask);
                 clientTask.start();
 
-
-
 //                //获取输入流
 //                socket.getInputStream();
 //                //写入客户端
 //                socket.getOutputStream();
             }
-
-
 
         } catch (IOException e) {
             e.printStackTrace();

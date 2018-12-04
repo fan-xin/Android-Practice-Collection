@@ -26,7 +26,7 @@ public class TcpClient {
     public void start(){
         try {
             //建立socket
-            Socket socket = new Socket("192.0.1.1",9090);
+            Socket socket = new Socket("127.0.1.1",9090);
 
             //获取输入流
             InputStream inputStream = socket.getInputStream();

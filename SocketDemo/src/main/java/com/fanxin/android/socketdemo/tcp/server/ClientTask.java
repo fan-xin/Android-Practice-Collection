@@ -39,11 +39,12 @@ public class ClientTask extends Thread implements MsgPool.MsgComingListener {
         try {
             while ((line = br.readLine())!= null){
                 //如果读取到客户端的信息
-                System.out.print("read = "+line);
+                System.out.print("客户端 "+mSocket.getInetAddress()+":"+mSocket.getPort()+"输入内容： "+line);
+                //换行
+                System.out.print("\n");
                 //转发消息至其他客户端socket
                 //把消息传送给MsgPool
                 MsgPool.getsInstance().sendMsg(mSocket.getPort()+" : "+line);
-
             }
         }catch (IOException e){
             e.printStackTrace();
