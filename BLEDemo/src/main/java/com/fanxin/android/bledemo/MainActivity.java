@@ -1,16 +1,25 @@
 package com.fanxin.android.bledemo;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.le.BluetoothLeScanner;
+import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanResult;
+import android.bluetooth.le.ScanSettings;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
     //蓝牙适配器
     private BluetoothAdapter bluetoothAdapter;
     private Toast toast;
+
+    //开始扫描打按钮
+    private Button startButton;
+    //用来控制状态的变量，默认为false
+    private boolean mIsScanStart = false;
+
+    private BluetoothLeScanner leScanner;
+
+    private ScanSettings scanSettings;
+
 
 
     @Override
@@ -54,6 +73,58 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.d(TAG,"检查手机结束");
 
+
+        //从adapter获取scanner
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            leScanner = bluetoothAdapter.getBluetoothLeScanner();
+            scanSettings = new ScanSettings.Builder()
+                    .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                    .setReportDelay(3000).build();
+        }
+
+
+
+
+
+        startButton = (Button)findViewById(R.id.id_btn_start_scan);
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!mIsScanStart){
+                    //如果还没开始扫描，则开始扫描
+                    startButton.setText("Stop Scan");
+                    mIsScanStart = true;
+                    scan(true);
+                }else {
+                    startButton.setText("Start Scan");
+                    mIsScanStart = false;
+                    scan(false);
+                }
+
+            }
+        });
+
+    }
+
+    @TargetApi(23)
+    private void scan(boolean enable){
+        final ScanCallback scanCallback = new ScanCallback() {
+            @Override
+            public void onScanResult(int callbackType, ScanResult result) {
+                super.onScanResult(callbackType, result);
+                BluetoothDevice device = result.getDevice();
+                //打印出名字和mac地址
+                Log.d(TAG,"打印设备名称和MAC地址");
+                Log.d(TAG,"name = " + device.getName() +", address = "+
+                        device.getAddress());
+            }
+        };
+        if (enable){
+            leScanner.startScan(scanCallback);
+        }else {
+            leScanner.stopScan(scanCallback);
+
+        }
     }
 
     @Override
