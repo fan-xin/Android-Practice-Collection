@@ -19,6 +19,7 @@
 
     <EditText
         android:id="@+id/id_edittext"
+        android:text="https://www.imooc.com/u/6954520/plans"
         android:layout_toLeftOf="@id/id_send_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
