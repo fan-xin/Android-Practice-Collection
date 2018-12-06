@@ -18,9 +18,17 @@
         </activity>
         <!--注册服务 -->
         <service
-            android:name=".MyService"
+            android:name="com.fanxin.android.servicedemo.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+            <!--意图过滤器 -->
+            <intent-filter>
+                <action android:name="com.fanxin.myservice">
+
+                </action>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
