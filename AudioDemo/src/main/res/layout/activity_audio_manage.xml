@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_centerHorizontal="true"
+    tools:context=".AudioManageActivity">
+
+    <Button
+        android:id="@+id/btn_up"
+        android:text="up"
+        android:layout_weight="1"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_down"
+        android:text="down"
+        android:layout_weight="1"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_mute"
+        android:text="mute"
+        android:layout_weight="1"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_unmute"
+        android:text="unmute"
+        android:layout_weight="1"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
