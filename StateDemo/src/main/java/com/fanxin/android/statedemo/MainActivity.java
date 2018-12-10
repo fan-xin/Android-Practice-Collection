@@ -1,5 +1,6 @@
 package com.fanxin.android.statedemo;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,5 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG,"onDestroy: "+this);
 
+    }
+
+    //当系统配置放生变化时，触发的函数
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        Log.d(TAG,"onConfigurationChanged: "+this);
     }
 }
