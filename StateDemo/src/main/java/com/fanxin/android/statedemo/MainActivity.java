@@ -48,4 +48,20 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG,"onConfigurationChanged: "+this);
     }
+
+    //保存Activity对象的状态
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        Log.d(TAG,"onSaveInstanceState: "+this);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        Log.d(TAG,"onRestoreInstanceState: "+this);
+    }
 }
