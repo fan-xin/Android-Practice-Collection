@@ -20,8 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //真实的项目，时间要从服务器获取
-        createTime = System.currentTimeMillis();
+        if (savedInstanceState != null){
+            createTime = savedInstanceState.getLong("createTime");
+            Log.d(TAG,"onCreate:bundle:"+Integer.toHexString(savedInstanceState.hashCode()));
+        }else {
+            //真实的项目，时间要从服务器获取
+            createTime = System.currentTimeMillis();
+        }
 
         String formatTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date(this.createTime));
 
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mCreateTimeTextView.setText(formatTime);
 
         Log.d(TAG,"onCreate: "+this);
+
 
 
     }
@@ -56,6 +62,17 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG,"onSaveInstanceState: "+this);
 
+        Log.d(TAG,"outState1 is : "+outState);
+
+        outState.putLong("createTime",this.createTime);
+
+
+        Log.d(TAG,"outState2 is : "+outState);
+
+        Log.d(TAG,"on onSaveInstanceState, bundle is "+Integer.toHexString(outState.hashCode()));
+
+
+
     }
 
     @Override
@@ -63,5 +80,8 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
 
         Log.d(TAG,"onRestoreInstanceState: "+this);
-    }
+
+        Log.d(TAG,"onRestoreInstanceState, bundle is "+Integer.toHexString(savedInstanceState.hashCode()));
+
+        }
 }
