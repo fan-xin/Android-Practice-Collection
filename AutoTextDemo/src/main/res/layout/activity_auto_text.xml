@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".AutoTextActivity">
 
     <TextView
@@ -15,8 +16,9 @@
         android:layout_height="wrap_content"
 
         android:textSize="88sp"
-        android:textColor="#f40303"
+        android:textColor="#f16407"
         android:textStyle="bold"
+        android:background="@color/colorPrimary"
 
         android:singleLine="true"
         android:ellipsize="marquee"
