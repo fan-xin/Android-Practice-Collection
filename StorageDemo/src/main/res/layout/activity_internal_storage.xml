@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InternalStorage">
+
+    <EditText
+        android:id="@+id/text_int"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_int_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交"
+            android:onClick="operate"
+            />
+
+        <Button
+            android:id="@+id/btn_int_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取"
+            android:onClick="operate"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_int"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
