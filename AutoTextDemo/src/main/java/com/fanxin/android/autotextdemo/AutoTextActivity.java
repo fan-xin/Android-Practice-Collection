@@ -16,7 +16,7 @@ public class AutoTextActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.id_tv);
 
-        textView.setText("乔静好棒！ 乔静好棒！");
+        textView.setText("乔静好棒！ 乔静好棒！乔静好棒！ 乔静好棒！乔静好棒！ 乔静好棒！");
 
 
         textView.setSelected(true);
