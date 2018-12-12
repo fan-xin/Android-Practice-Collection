@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context=".FrontActivity">
+
+    <TextView
+        android:text="疯狂De外卖小哥"
+        android:layout_above="@id/id_btn_exit_game"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="100dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/id_btn_start_game"
+        android:layout_above="@id/id_btn_exit_game"
+        android:layout_centerHorizontal="true"
+        android:text="开始游戏"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/id_btn_exit_game"
+        android:text="检查更新"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_below="@id/id_btn_exit_game"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/id_btn_about_game"
+        android:text="关于游戏"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
