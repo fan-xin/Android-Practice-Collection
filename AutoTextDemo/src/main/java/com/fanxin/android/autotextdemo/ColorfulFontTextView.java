@@ -35,10 +35,14 @@ public class ColorfulFontTextView extends TextView {
             if (TextViewWidth > 0){
                 paint = getPaint();
                 linearGradient = new LinearGradient(0,0,TextViewWidth,0,
-                        new int[]{Color.BLUE,Color.YELLOW,Color.RED,Color.GREEN,Color.GRAY},null, Shader.TileMode.CLAMP);
+                        new int[]{Color.RED,Color.BLUE,Color.YELLOW,Color.GREEN,Color.WHITE},null, Shader.TileMode.CLAMP);
                 paint.setShader(linearGradient);
             }
         }
 
+    }
+
+    public boolean isFocused(){
+        return true;
     }
 }

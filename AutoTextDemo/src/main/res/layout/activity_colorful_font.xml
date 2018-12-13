@@ -14,13 +14,18 @@
         android:textSize="28sp"
         android:text="好棒好棒好棒！！！"/-->
 
+    <ScrollView
+        android:id="@+id/id_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <com.fanxin.android.autotextdemo.NenoTextview
         android:id="@+id/id_neno_tv"
 
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:textSize="200sp"
-        android:text="乔静好棒！好棒好棒！！！"
+        android:textSize="100sp"
+        android:text="爱与和平!爱与和平爱与和平爱与和平爱与和平爱与和平"
 
         android:singleLine="true"
         android:ellipsize="marquee"
@@ -30,5 +35,7 @@
         android:focusableInTouchMode="true"
 
         />
+
+    </ScrollView>
 
 </LinearLayout>
