@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/id_tv_title"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="转场动画练习"
+        android:gravity="center_horizontal"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:padding="8dp"
+     />
+
+    <View
+        android:id="@+id/id_view_image"
+        android:layout_width="230dp"
+        android:layout_height="223dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="126dp"
+        android:background="@color/colorPrimary"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/id_btn_import"
+        android:text="导入"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/id_tv_title"
+        android:layout_marginStart="33dp"
+        android:text="加入转场动画" />
+
+</RelativeLayout>
